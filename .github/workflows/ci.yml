@@ -1,0 +1,60 @@
+name: governed-exact-sha-ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - development
+      - testing
+      - staging
+      - production
+      - 'section/**'
+      - 'subsection/**'
+
+permissions:
+  contents: read
+
+jobs:
+  exact-sha-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      EXPECTED_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - name: Check out exact candidate SHA
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.EXPECTED_SHA }}
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Prove exact source identity
+        run: |
+          set -Eeuo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
+          test -z "$(git status --porcelain)"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Validate Python source and package metadata
+        run: |
+          set -Eeuo pipefail
+          python -m compileall -q src
+          python - <<'PY'
+          import pathlib, tomllib
+          data = tomllib.loads(pathlib.Path("pyproject.toml").read_text())
+          assert data["project"]["name"] == "f5-tts"
+          assert data["project"]["version"]
+          PY
+      - name: Validate governed safety metadata
+        run: |
+          set -Eeuo pipefail
+          test -s AGENTS.md
+          test -s .codestra/governance/policy.json
+          python - <<'PY'
+          import json
+          p=json.load(open(".codestra/governance/policy.json"))
+          assert p["production"]["PRODUCTION_GO"] == "NO"
+          assert p["production"]["LIVE_CAPABILITIES_ENABLED"] == "NO"
+          assert p["production"]["EXTERNAL_EFFECTS"] == "false"
+          PY
