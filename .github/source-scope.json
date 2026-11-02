@@ -1,0 +1,506 @@
+{
+  "schema_version": 1,
+  "repository": "appolon1908/Codestra-TTS-F5",
+  "scope": "frozen-vendor-documentation-additions-only",
+  "application_source_allowed": false,
+  "reviewed_base_sha": "8b6249af8a869af4eee04d92e3e17d04c5e6bc55",
+  "reviewed_base_tree": "978b6e844c34e82c4c1798dac38b732951d2150e",
+  "baseline_files": [
+    ".github/ISSUE_TEMPLATE/bug_report.yml",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/ISSUE_TEMPLATE/feature_request.yml",
+    ".github/ISSUE_TEMPLATE/help_wanted.yml",
+    ".github/ISSUE_TEMPLATE/question.yml",
+    ".gitignore",
+    ".gitmodules",
+    ".pre-commit-config.yaml",
+    "AGENTS.md",
+    "Dockerfile",
+    "LICENSE",
+    "README.md",
+    "docs/ARCHITECTURE-CHARTS.md",
+    "pyproject.toml",
+    "ruff.toml",
+    "src/f5_tts/api.py",
+    "src/f5_tts/configs/E2TTS_Base.yaml",
+    "src/f5_tts/configs/E2TTS_Small.yaml",
+    "src/f5_tts/configs/F5TTS_Base.yaml",
+    "src/f5_tts/configs/F5TTS_Small.yaml",
+    "src/f5_tts/configs/F5TTS_v1_Base.yaml",
+    "src/f5_tts/configs/F5TTS_v1_Small.yaml",
+    "src/f5_tts/eval/README.md",
+    "src/f5_tts/eval/ecapa_tdnn.py",
+    "src/f5_tts/eval/eval_infer_batch.py",
+    "src/f5_tts/eval/eval_infer_batch.sh",
+    "src/f5_tts/eval/eval_infer_batch_example.sh",
+    "src/f5_tts/eval/eval_librispeech_test_clean.py",
+    "src/f5_tts/eval/eval_seedtts_testset.py",
+    "src/f5_tts/eval/eval_utmos.py",
+    "src/f5_tts/eval/utils_eval.py",
+    "src/f5_tts/infer/README.md",
+    "src/f5_tts/infer/SHARED.md",
+    "src/f5_tts/infer/examples/basic/basic.toml",
+    "src/f5_tts/infer/examples/basic/basic_ref_en.wav",
+    "src/f5_tts/infer/examples/basic/basic_ref_zh.wav",
+    "src/f5_tts/infer/examples/multi/country.flac",
+    "src/f5_tts/infer/examples/multi/main.flac",
+    "src/f5_tts/infer/examples/multi/story.toml",
+    "src/f5_tts/infer/examples/multi/story.txt",
+    "src/f5_tts/infer/examples/multi/town.flac",
+    "src/f5_tts/infer/examples/vocab.txt",
+    "src/f5_tts/infer/infer_cli.py",
+    "src/f5_tts/infer/infer_gradio.py",
+    "src/f5_tts/infer/speech_edit.py",
+    "src/f5_tts/infer/utils_infer.py",
+    "src/f5_tts/model/__init__.py",
+    "src/f5_tts/model/backbones/README.md",
+    "src/f5_tts/model/backbones/dit.py",
+    "src/f5_tts/model/backbones/mmdit.py",
+    "src/f5_tts/model/backbones/unett.py",
+    "src/f5_tts/model/cfm.py",
+    "src/f5_tts/model/dataset.py",
+    "src/f5_tts/model/modules.py",
+    "src/f5_tts/model/trainer.py",
+    "src/f5_tts/model/utils.py",
+    "src/f5_tts/runtime/triton_trtllm/.gitignore",
+    "src/f5_tts/runtime/triton_trtllm/Dockerfile.server",
+    "src/f5_tts/runtime/triton_trtllm/README.md",
+    "src/f5_tts/runtime/triton_trtllm/benchmark.py",
+    "src/f5_tts/runtime/triton_trtllm/client_grpc.py",
+    "src/f5_tts/runtime/triton_trtllm/client_http.py",
+    "src/f5_tts/runtime/triton_trtllm/docker-compose.yml",
+    "src/f5_tts/runtime/triton_trtllm/model_repo_f5_tts/f5_tts/1/f5_tts_trtllm.py",
+    "src/f5_tts/runtime/triton_trtllm/model_repo_f5_tts/f5_tts/1/model.py",
+    "src/f5_tts/runtime/triton_trtllm/model_repo_f5_tts/f5_tts/config.pbtxt",
+    "src/f5_tts/runtime/triton_trtllm/model_repo_f5_tts/vocoder/1/.gitkeep",
+    "src/f5_tts/runtime/triton_trtllm/model_repo_f5_tts/vocoder/config.pbtxt",
+    "src/f5_tts/runtime/triton_trtllm/patch/__init__.py",
+    "src/f5_tts/runtime/triton_trtllm/patch/f5tts/model.py",
+    "src/f5_tts/runtime/triton_trtllm/patch/f5tts/modules.py",
+    "src/f5_tts/runtime/triton_trtllm/run.sh",
+    "src/f5_tts/runtime/triton_trtllm/scripts/conv_stft.py",
+    "src/f5_tts/runtime/triton_trtllm/scripts/convert_checkpoint.py",
+    "src/f5_tts/runtime/triton_trtllm/scripts/export_vocoder_to_onnx.py",
+    "src/f5_tts/runtime/triton_trtllm/scripts/export_vocos_trt.sh",
+    "src/f5_tts/runtime/triton_trtllm/scripts/fill_template.py",
+    "src/f5_tts/scripts/count_max_epoch.py",
+    "src/f5_tts/scripts/count_max_epoch_precise.py",
+    "src/f5_tts/scripts/count_params_gflops.py",
+    "src/f5_tts/socket_client.py",
+    "src/f5_tts/socket_server.py",
+    "src/f5_tts/train/README.md",
+    "src/f5_tts/train/datasets/prepare_csv_wavs.py",
+    "src/f5_tts/train/datasets/prepare_emilia.py",
+    "src/f5_tts/train/datasets/prepare_emilia_v2.py",
+    "src/f5_tts/train/datasets/prepare_libritts.py",
+    "src/f5_tts/train/datasets/prepare_ljspeech.py",
+    "src/f5_tts/train/datasets/prepare_wenetspeech4tts.py",
+    "src/f5_tts/train/finetune_cli.py",
+    "src/f5_tts/train/finetune_gradio.py",
+    "src/f5_tts/train/train.py"
+  ],
+  "frozen_entries": {
+    ".github/ISSUE_TEMPLATE/bug_report.yml": {
+      "mode": "100644",
+      "blob": "15bc886517594b28ab05d0ea9fa0f7cadb26c16f"
+    },
+    ".github/ISSUE_TEMPLATE/config.yml": {
+      "mode": "100644",
+      "blob": "3ba13e0cec6cbbfd462e9ebf529dd2093148cd69"
+    },
+    ".github/ISSUE_TEMPLATE/feature_request.yml": {
+      "mode": "100644",
+      "blob": "2809a71bee43406553aec5891d3dca6c1a621c04"
+    },
+    ".github/ISSUE_TEMPLATE/help_wanted.yml": {
+      "mode": "100644",
+      "blob": "db96369cb233114aab4415ce32074c6610665783"
+    },
+    ".github/ISSUE_TEMPLATE/question.yml": {
+      "mode": "100644",
+      "blob": "cc6f875c3330fe7be59dab21e2d8d7d75526004c"
+    },
+    ".gitignore": {
+      "mode": "100644",
+      "blob": "fac2555ffccae81a927f99b85444686b032c7319"
+    },
+    ".gitmodules": {
+      "mode": "100644",
+      "blob": "1f572cc141aefa1e6f11c8fe48bd646e5b4d73f1"
+    },
+    ".pre-commit-config.yaml": {
+      "mode": "100644",
+      "blob": "ffc3183d4febf2dc5eb825739e3ba81970a1b80e"
+    },
+    "AGENTS.md": {
+      "mode": "100644",
+      "blob": "06794078bb3167f75933267527c5c63e113708bf"
+    },
+    "Dockerfile": {
+      "mode": "100644",
+      "blob": "069b76dde8c9ce6e80fa34c0964c2f31fac7fe76"
+    },
+    "LICENSE": {
+      "mode": "100644",
+      "blob": "98230507a05c8577744b5e6445895712fe285eff"
+    },
+    "README.md": {
+      "mode": "100644",
+      "blob": "e0903aea55ae3e02c0cfa77407dcf7a49940633d"
+    },
+    "docs/ARCHITECTURE-CHARTS.md": {
+      "mode": "100644",
+      "blob": "59a3b7c1eb81e746e91c74e6a4206aaaa299df2e"
+    },
+    "pyproject.toml": {
+      "mode": "100644",
+      "blob": "457aa225cc4643008c2223c9a1b723bf692e2455"
+    },
+    "ruff.toml": {
+      "mode": "100644",
+      "blob": "d2288bf5ce7cd9b6151d5d61d6a14e08092c4a3f"
+    },
+    "src/f5_tts/api.py": {
+      "mode": "100644",
+      "blob": "782466deb02fca98fcf31322a1b24aad1a143fb4"
+    },
+    "src/f5_tts/configs/E2TTS_Base.yaml": {
+      "mode": "100644",
+      "blob": "45e6cbccfa6b87b86d94f1d5eedc2ae2245fa5f6"
+    },
+    "src/f5_tts/configs/E2TTS_Small.yaml": {
+      "mode": "100644",
+      "blob": "001a4ca0b1f4c448fd2fa492499aa4d50f20e0d7"
+    },
+    "src/f5_tts/configs/F5TTS_Base.yaml": {
+      "mode": "100644",
+      "blob": "89e0ffa146309d98de99d1fdd5fcd5d7088025df"
+    },
+    "src/f5_tts/configs/F5TTS_Small.yaml": {
+      "mode": "100644",
+      "blob": "ed9e86e5848e1cc3ab1d0a1f882ac1ad4f3e8349"
+    },
+    "src/f5_tts/configs/F5TTS_v1_Base.yaml": {
+      "mode": "100644",
+      "blob": "a468c89f95a940e34cf7243f5bce5d333557bf45"
+    },
+    "src/f5_tts/configs/F5TTS_v1_Small.yaml": {
+      "mode": "100644",
+      "blob": "9d3fdf1246ee2c6283337b818b39205105020226"
+    },
+    "src/f5_tts/eval/README.md": {
+      "mode": "100644",
+      "blob": "a2a692399c48fb4a39245fdf8fa8228592db97db"
+    },
+    "src/f5_tts/eval/ecapa_tdnn.py": {
+      "mode": "100644",
+      "blob": "f0e4c9cc20c3a9f251fd22f4f27851fd04238962"
+    },
+    "src/f5_tts/eval/eval_infer_batch.py": {
+      "mode": "100644",
+      "blob": "36fcb650aa51895b0b6723832b71859663cdaaa7"
+    },
+    "src/f5_tts/eval/eval_infer_batch.sh": {
+      "mode": "100644",
+      "blob": "9c5f47ba9eb9ca1a673ea8da26a69bb0d728818e"
+    },
+    "src/f5_tts/eval/eval_infer_batch_example.sh": {
+      "mode": "100644",
+      "blob": "a3286a561f2cedae626a86b137c4f02d83f96b80"
+    },
+    "src/f5_tts/eval/eval_librispeech_test_clean.py": {
+      "mode": "100644",
+      "blob": "863e69f25891694bb877584618cbbac59b3c40fe"
+    },
+    "src/f5_tts/eval/eval_seedtts_testset.py": {
+      "mode": "100644",
+      "blob": "4c932b9211c20c576cd81e3d2c3d985264fbabdb"
+    },
+    "src/f5_tts/eval/eval_utmos.py": {
+      "mode": "100644",
+      "blob": "b6166e8ab073a6134b23936e15e440332991bab2"
+    },
+    "src/f5_tts/eval/utils_eval.py": {
+      "mode": "100644",
+      "blob": "a8c5febd08a122bddf48b8986e3c9d50e103e7ca"
+    },
+    "src/f5_tts/infer/README.md": {
+      "mode": "100644",
+      "blob": "9de47aa75c035c41f0cacb0a2ca6112794c2a638"
+    },
+    "src/f5_tts/infer/SHARED.md": {
+      "mode": "100644",
+      "blob": "5476805646eb967f6df7884d1e55c1ebfa9c444b"
+    },
+    "src/f5_tts/infer/examples/basic/basic.toml": {
+      "mode": "100644",
+      "blob": "bc3ebb4e3f96368f5d5e7d5ad347a7c852f6f1cb"
+    },
+    "src/f5_tts/infer/examples/basic/basic_ref_en.wav": {
+      "mode": "100644",
+      "blob": "3c593c3cfe1528432e29f355bb8fd9ec1dd9847c"
+    },
+    "src/f5_tts/infer/examples/basic/basic_ref_zh.wav": {
+      "mode": "100644",
+      "blob": "8cc055ede333a6778b7cdd5f7665a5db0e87ecd7"
+    },
+    "src/f5_tts/infer/examples/multi/country.flac": {
+      "mode": "100644",
+      "blob": "ad6985b710ec754b0d40e79be6cc3563b32abf15"
+    },
+    "src/f5_tts/infer/examples/multi/main.flac": {
+      "mode": "100644",
+      "blob": "671aded6b10fc6f10d27d6b0764a109f0e7fadca"
+    },
+    "src/f5_tts/infer/examples/multi/story.toml": {
+      "mode": "100644",
+      "blob": "4633186229f50aac48a7a4bd673e886d6be153b9"
+    },
+    "src/f5_tts/infer/examples/multi/story.txt": {
+      "mode": "100644",
+      "blob": "844e521f44b0cb75899e6c2ab23637d8d456b2d4"
+    },
+    "src/f5_tts/infer/examples/multi/town.flac": {
+      "mode": "100644",
+      "blob": "39c258582ccbedc48b82c988e7808c114a682292"
+    },
+    "src/f5_tts/infer/examples/vocab.txt": {
+      "mode": "100644",
+      "blob": "a30a90c12e1ab38b95c97770d5c5cd1d03c392e2"
+    },
+    "src/f5_tts/infer/infer_cli.py": {
+      "mode": "100644",
+      "blob": "37516683f81685c0fcd840759a75b2f9dae3f040"
+    },
+    "src/f5_tts/infer/infer_gradio.py": {
+      "mode": "100644",
+      "blob": "fb24cad93c10028d0da4678bd3120ef5f45b5d74"
+    },
+    "src/f5_tts/infer/speech_edit.py": {
+      "mode": "100644",
+      "blob": "1b326562fe79389292c1bbecb19b856cf30bbd7d"
+    },
+    "src/f5_tts/infer/utils_infer.py": {
+      "mode": "100644",
+      "blob": "a0d94836ec33a325a147bd2b5302987a3b91157c"
+    },
+    "src/f5_tts/model/__init__.py": {
+      "mode": "100644",
+      "blob": "4a339feaf3c57dd2acb0d74267d7d8ea6e9081f2"
+    },
+    "src/f5_tts/model/backbones/README.md": {
+      "mode": "100644",
+      "blob": "09bd4da5b51d3349b0136cec601d5d3ae9ed92f0"
+    },
+    "src/f5_tts/model/backbones/dit.py": {
+      "mode": "100644",
+      "blob": "e463c957f7491754cd1b07ffec2ffb093ec70bdf"
+    },
+    "src/f5_tts/model/backbones/mmdit.py": {
+      "mode": "100644",
+      "blob": "262ad0d5f6d7564648a879943ba60c34beaeb379"
+    },
+    "src/f5_tts/model/backbones/unett.py": {
+      "mode": "100644",
+      "blob": "b3b55134f4f7639da817b73a7b5849cc534b5d0c"
+    },
+    "src/f5_tts/model/cfm.py": {
+      "mode": "100644",
+      "blob": "e001c2ec623e190a9d3507b74f966beb09c6b893"
+    },
+    "src/f5_tts/model/dataset.py": {
+      "mode": "100644",
+      "blob": "1f729f9b71e9ef0806282ac821336ca6ba2bdbd1"
+    },
+    "src/f5_tts/model/modules.py": {
+      "mode": "100644",
+      "blob": "7165632a9c039f8ef3480fd7742e5f7085c6822e"
+    },
+    "src/f5_tts/model/trainer.py": {
+      "mode": "100644",
+      "blob": "7829232220dc0659f3ca95f21f99b86f3519be9c"
+    },
+    "src/f5_tts/model/utils.py": {
+      "mode": "100644",
+      "blob": "ff349562645386bc8c2eb6782622b2927abf2f56"
+    },
+    "src/f5_tts/runtime/triton_trtllm/.gitignore": {
+      "mode": "100644",
+      "blob": "31160a72e8853d32c1a0443c51097b79908586e4"
+    },
+    "src/f5_tts/runtime/triton_trtllm/Dockerfile.server": {
+      "mode": "100644",
+      "blob": "dd176a5acbcce2726e762c281e648e88e28dcb4b"
+    },
+    "src/f5_tts/runtime/triton_trtllm/README.md": {
+      "mode": "100644",
+      "blob": "5c01613cb7cc3f80c3f1c6bec02e8da4c8cee9ee"
+    },
+    "src/f5_tts/runtime/triton_trtllm/benchmark.py": {
+      "mode": "100644",
+      "blob": "4f6b4b5fae4cb844ef00942a425fcce8e49bede3"
+    },
+    "src/f5_tts/runtime/triton_trtllm/client_grpc.py": {
+      "mode": "100644",
+      "blob": "784f8a9e81e59bb34cacf7d71f5ab29fbdb70ddf"
+    },
+    "src/f5_tts/runtime/triton_trtllm/client_http.py": {
+      "mode": "100644",
+      "blob": "5c967a7acce51c472dc335afde4076a10b8b302e"
+    },
+    "src/f5_tts/runtime/triton_trtllm/docker-compose.yml": {
+      "mode": "100644",
+      "blob": "15195912832668f5dd6b90feef7dc4eaa7efbaf3"
+    },
+    "src/f5_tts/runtime/triton_trtllm/model_repo_f5_tts/f5_tts/1/f5_tts_trtllm.py": {
+      "mode": "100644",
+      "blob": "7f9cea4ba22e8676cce1e3750f72aa0cee333989"
+    },
+    "src/f5_tts/runtime/triton_trtllm/model_repo_f5_tts/f5_tts/1/model.py": {
+      "mode": "100644",
+      "blob": "0001937d27dc627b8f5b77f62675561a79b481b8"
+    },
+    "src/f5_tts/runtime/triton_trtllm/model_repo_f5_tts/f5_tts/config.pbtxt": {
+      "mode": "100644",
+      "blob": "07f0c78c72c298c3e38733af47607d8f22571ae8"
+    },
+    "src/f5_tts/runtime/triton_trtllm/model_repo_f5_tts/vocoder/1/.gitkeep": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "src/f5_tts/runtime/triton_trtllm/model_repo_f5_tts/vocoder/config.pbtxt": {
+      "mode": "100644",
+      "blob": "9a30b52411e71d305e182bfbf4eea5726473d736"
+    },
+    "src/f5_tts/runtime/triton_trtllm/patch/__init__.py": {
+      "mode": "100644",
+      "blob": "ab19e9f181f7e5f49e6f2dbe36d32250fcd8761a"
+    },
+    "src/f5_tts/runtime/triton_trtllm/patch/f5tts/model.py": {
+      "mode": "100644",
+      "blob": "03132f878ddc37364c6a3533b91fd2299be01264"
+    },
+    "src/f5_tts/runtime/triton_trtllm/patch/f5tts/modules.py": {
+      "mode": "100644",
+      "blob": "312e508b03e2d830bcf615caaf3c2a1d73458511"
+    },
+    "src/f5_tts/runtime/triton_trtllm/run.sh": {
+      "mode": "100644",
+      "blob": "3c84d8fa90d0b32bc4a4d49118a263879d92941e"
+    },
+    "src/f5_tts/runtime/triton_trtllm/scripts/conv_stft.py": {
+      "mode": "100644",
+      "blob": "993e47243fc6998ae2c15e8d22aa3e56a1aae1cf"
+    },
+    "src/f5_tts/runtime/triton_trtllm/scripts/convert_checkpoint.py": {
+      "mode": "100644",
+      "blob": "57b741d5520cb45189986ff2362e7127c1244b4b"
+    },
+    "src/f5_tts/runtime/triton_trtllm/scripts/export_vocoder_to_onnx.py": {
+      "mode": "100644",
+      "blob": "6743aeca06073cfa66796a2efbe7d1d371ee18fe"
+    },
+    "src/f5_tts/runtime/triton_trtllm/scripts/export_vocos_trt.sh": {
+      "mode": "100644",
+      "blob": "2be2fbc8234c1859abaf5f5d2dacd4b86e954935"
+    },
+    "src/f5_tts/runtime/triton_trtllm/scripts/fill_template.py": {
+      "mode": "100644",
+      "blob": "105cfac85984d104d1204f0ead52e2bd1048c4be"
+    },
+    "src/f5_tts/scripts/count_max_epoch.py": {
+      "mode": "100644",
+      "blob": "5e62b76abf5374d90aae7c8d7f8eba8b6913a062"
+    },
+    "src/f5_tts/scripts/count_max_epoch_precise.py": {
+      "mode": "100644",
+      "blob": "e13936f92ca15f4308cd8750ee7c3fb3a3f3215a"
+    },
+    "src/f5_tts/scripts/count_params_gflops.py": {
+      "mode": "100644",
+      "blob": "d706388add443641bdac3ed36f0f876d4f547063"
+    },
+    "src/f5_tts/socket_client.py": {
+      "mode": "100644",
+      "blob": "c47ad4482600c4338afddb8eb9d40e08e6c3cf7c"
+    },
+    "src/f5_tts/socket_server.py": {
+      "mode": "100644",
+      "blob": "3fd780ae1f275575da42360167c47395389b271e"
+    },
+    "src/f5_tts/train/README.md": {
+      "mode": "100644",
+      "blob": "5ec91e2f9bc60f308aadb4d593d68c63909e9631"
+    },
+    "src/f5_tts/train/datasets/prepare_csv_wavs.py": {
+      "mode": "100644",
+      "blob": "acbdbfb845a788f61ef6999a1deac02653b63699"
+    },
+    "src/f5_tts/train/datasets/prepare_emilia.py": {
+      "mode": "100644",
+      "blob": "1f92fb83b59764ca0f811a8d3cc76cea40e0655f"
+    },
+    "src/f5_tts/train/datasets/prepare_emilia_v2.py": {
+      "mode": "100644",
+      "blob": "e839412ae8c233dde351bf74ad5ebb2885b03398"
+    },
+    "src/f5_tts/train/datasets/prepare_libritts.py": {
+      "mode": "100644",
+      "blob": "0a11eb0dbb1bfd4c78b2b7c1bc905a3cf92d9a98"
+    },
+    "src/f5_tts/train/datasets/prepare_ljspeech.py": {
+      "mode": "100644",
+      "blob": "4a60e39694244434132f34fd25e4528574f6662a"
+    },
+    "src/f5_tts/train/datasets/prepare_wenetspeech4tts.py": {
+      "mode": "100644",
+      "blob": "a598966f0f5a827ae3e0b176470e361e4c92f6cc"
+    },
+    "src/f5_tts/train/finetune_cli.py": {
+      "mode": "100644",
+      "blob": "cdf42a9ace27a92cf369ce1523a3e640fd61ea3e"
+    },
+    "src/f5_tts/train/finetune_gradio.py": {
+      "mode": "100644",
+      "blob": "3acfec32cdfd411f28b6d6145762e1097502c3e1"
+    },
+    "src/f5_tts/train/train.py": {
+      "mode": "100644",
+      "blob": "84196a4091935fe60306fe7ccd9df630a7ef9372"
+    }
+  },
+  "frozen_prefixes": [],
+  "authority_hashes": {},
+  "required_text": {},
+  "structured_files": {
+    "governance/interim-release-policy.json": {
+      "schema_version": 1,
+      "policy_kind": "source_merge",
+      "repository": "appolon1908/Codestra-TTS-F5",
+      "authorization_date": "2026-11-02",
+      "required_checks": [
+        {
+          "context": "frozen-vendor-documentation-source",
+          "integration_id": 15368,
+          "workflow": ".github/workflows/source-scope.yml"
+        }
+      ],
+      "replaces_contexts": [
+        "codestra-control-plane",
+        "codestra/control-plane"
+      ],
+      "preserve": [
+        "other_required_checks",
+        "review_requirements",
+        "ref_conditions",
+        "bypass_actors",
+        "enforcement",
+        "force_push_protection",
+        "deletion_protection",
+        "deployment_authority"
+      ],
+      "production_activation_authorized": false,
+      "note": "Only documentation additions outside the frozen baseline are validated. Every original vendor, config, lock and authority Git blob/mode remains immutable. This does not certify vendor code, runtime or vendor security and does not authorize deployment."
+    }
+  }
+}
